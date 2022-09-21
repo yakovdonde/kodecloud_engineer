@@ -1,0 +1,17 @@
+################# Task ##########################
+The System admin team of xFusionCorp Industries has installed a backup agent tool on all app servers. As per the tool's
+requirements they need to create a user with a non-interactive shell.
+Therefore, create a user named anita with a non-interactive shell on the App Server 1
+
+############### Solution ################
+
+step 1: Login to  stapp01.stratos.xfusioncorp.com
+    a: ssh tony@172.16.238.10
+
+Step2: Create a user
+    a: sudo adduser anita  -s /sbin/nologin
+    b: provide tony's password
+
+Step 3: Check wheter your new user exists
+    a: cat /etc/passwd |grep anita
+    b: expected output: anita:x:1002:1002::/home/anita:/sbin/nologin
