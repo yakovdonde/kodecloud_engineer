@@ -1,0 +1,19 @@
+################# Task ##########################
+During the daily standup, it was pointed out that the timezone across Nautilus Application Servers in Stratos Datacenter
+doesn't match with that of the local datacenter's timezone, which is Indian/Mahe.
+
+Correct the mismatch.
+
+############### Solution ################
+
+step 1: Login to each of the application servers
+    a: ssh tony@172.16.238.10
+    b: ssh steve@172.16.238.11
+    c: ssh banner@172.16.238.12
+
+Step 3: Set timezone Indian/Mahe
+    a: check which timezone is currently set: "sudo timedatectl | grep Time"
+
+Step 3: Set timezone Indian/Mahe
+    a: execute on each server: "sudo timedatectl set-timezone Indian/Mahe"
+    b: check if timezone applied: "sudo timedatectl | grep Time"
