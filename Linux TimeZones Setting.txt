@@ -11,7 +11,7 @@ step 1: Login to each of the application servers
     b: ssh steve@172.16.238.11
     c: ssh banner@172.16.238.12
 
-Step 3: Set timezone Indian/Mahe
+Step 2: Set timezone Indian/Mahe
     a: check which timezone is currently set: "sudo timedatectl | grep Time"
 
 Step 3: Set timezone Indian/Mahe
