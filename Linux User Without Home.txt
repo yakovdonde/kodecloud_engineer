@@ -1,0 +1,19 @@
+################# Task ##########################
+The system admins team of xFusionCorp Industries has set up a new tool on all app servers, as they have a requirement to
+create a service user account that will be used by that tool. They are finished with all apps except for App Server 2
+in Stratos Datacenter.
+Create a user named rose in App Server 2 without a home directory.
+
+############### Solution ################
+
+step 1: Login to each of the application servers
+    b: ssh steve@172.16.238.11
+
+Step 2: Create a new user
+    a: sudo useradd --no-create-home rose
+
+Step 3: Check is user exists
+    a: sudo cat /etc/shadow | grep -i rose
+
+Step 3: check if /home/rose exists (it shouldn't)
+    a: ls /home | grep -i rose
