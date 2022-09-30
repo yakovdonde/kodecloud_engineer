@@ -1,21 +1,22 @@
 ################# Task ##########################
-New tools have been installed on the app server in Stratos Datacenter. Some of these tools can only be managed from the
-graphical user interface. Therefore, there are requirements for these app servers.
+The xFusionCorp Industries security team recently did a security audit of their infrastructure and came up with ideas to
+improve the application and server security. They decided to use SElinux for an additional security layer. They are
+still planning how they will implement it; however, they have decided to start testing with app servers, so based on the
+recommendations they have the following requirements:
 
-On all App servers in Stratos Datacenter change the default runlevel so that they can boot in GUI
-(graphical user interface) by default. Please do not try to reboot these servers
+
+Install the required packages of SElinux on App server 2 in Stratos Datacenter and disable it permanently for now; it
+will be enabled after making some required configuration changes on this host. Don't worry about rebooting the server as
+there is already a reboot scheduled for tonight's maintenance window. Also ignore the status of SElinux command line
+right now; the final status after reboot should be disabled.
 ############### Solution ################
 
-step 1: Login to  each of the application servers
-    a: ssh tony@172.16.238.10
-    b: ssh steve@172.16.238.11
-    c: ssh banner@172.16.238.12
+step 1: Login to application server 2
+    a: ssh steve@172.16.238.11
 
-Step 2: Check the current default runlevel
-    a: sudo systemctl get-default
+Step 2: Install Selinux
+    a: sudo yum install selinux -y
 
-Step 3: Set the default runlevel to runlevel 5 (GUI)
-    a: sudo systemctl set-default graphical.target
-
-Step 4: Check whether default runlevel changed to "graphical.target"
-    a: sudo systemctl get-default
+Step 3: Disable the selinux
+    a: edit the "/etc/sysconfig/selinux" file
+    b: inside the value, set "SELINUX=disabled"
