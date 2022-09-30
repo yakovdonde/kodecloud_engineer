@@ -14,7 +14,7 @@ step 1: Login to  each of the application servers
 Step 2: Check the current default runlevel
     a: sudo systemctl get-default
 
-Step 3: Set the default runlever to runlevel 5 (GUI)
+Step 3: Set the default runlevel to runlevel 5 (GUI)
     a: sudo systemctl set-default graphical.target
 
 Step 4: Check whether default runlevel changed to "graphical.target"
