@@ -1,0 +1,21 @@
+################# Task ##########################
+New tools have been installed on the app server in Stratos Datacenter. Some of these tools can only be managed from the
+graphical user interface. Therefore, there are requirements for these app servers.
+
+On all App servers in Stratos Datacenter change the default runlevel so that they can boot in GUI
+(graphical user interface) by default. Please do not try to reboot these servers
+############### Solution ################
+
+step 1: Login to  each of the application servers
+    a: ssh tony@172.16.238.10
+    b: ssh steve@172.16.238.11
+    c: ssh banner@172.16.238.12
+
+Step 2: Check the current default runlevel
+    a: sudo systemctl get-default
+
+Step 3: Set the default runlever to runlevel 5 (GUI)
+    a: sudo systemctl set-default graphical.target
+
+Step 4: Check whether default runlevel changed to "graphical.target"
+    a: sudo systemctl get-default
