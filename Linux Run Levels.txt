@@ -15,7 +15,7 @@ step 1: Login to application server 2
     a: ssh steve@172.16.238.11
 
 Step 2: Install Selinux
-    a: sudo yum install selinux -y
+    a: sudo yum install selinux* -y
 
 Step 3: Disable the selinux
     a: edit the "/etc/sysconfig/selinux" file
