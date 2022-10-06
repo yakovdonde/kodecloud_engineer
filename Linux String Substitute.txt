@@ -1,0 +1,17 @@
+################# Task ##########################
+The backup server in the Stratos DC contains several template XML files used by the Nautilus application. However,
+these template XML files must be populated with valid data before they can be used. One of the daily tasks of a system
+admin working in the xFusionCorp industries is to apply string and file manipulation commands!
+
+Replace all occurances of the string Random to Torpedo on the XML file /root/nautilus.xml located in the backup server.
+############### Solution ################
+
+step 1: Login to stbkp01
+    a: ssh clint@172.16.238.16
+
+Step 2: Edit the "root/nautilus.xml" file
+    a: sudo sed -i 's/String/Submarine/g' "/root/nautilus.xml"
+
+Step 3: Check whether command worked
+    a: sudo cat /root/nautilus.xml | grep -i Submarine (Should exist)
+    b: sudo cat /root/nautilus.xml | grep  String (Shouldn't exist)
